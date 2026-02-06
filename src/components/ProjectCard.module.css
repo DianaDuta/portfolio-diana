@@ -1,0 +1,156 @@
+/**
+ * ESTILOS PARA: ProjectCard
+ * CONCEPTO: 'Dark Glass'. Tarjetas oscuras translúcidas que flotan.
+ * INTERACCIÓN: Elevación y brillo sutil del borde al hacer hover.
+ */
+
+.card {
+  /* Fondo de cristal oscuro (Savia/Pizarra translúcido) */
+  background: var(--bg-surface);
+  
+  /* Borde muy fino y sutil para definir la forma sin ser brusco */
+  border: 1px solid var(--border-light);
+  
+  /* Desenfoque fuerte para que el fondo de ondas se vea borroso detrás */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border-radius: 24px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
+  /* Transición suave para todos los estados */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* --------- PRUEBAS ------------ */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva de animación suave */
+}
+
+
+.card:hover {
+  /* 1. MOVIMIENTO: Se eleva y crece muy sutilmente */
+  transform: translateY(-12px) scale(1.02);
+  
+  /* 2. SUPERFICIE: El fondo se aclara para indicar que está "más cerca" de la luz */
+  background: rgba(168, 182, 177, 0.15); /* Gris Salvia muy suave */
+  border-color: rgba(200, 162, 200, 0.6); /* Borde Lavanda más visible */
+  
+  /* 3. SOMBRA DE DOBLE CAPA (El cambio clave) */
+  box-shadow: 
+    /* Capa 1: Sombra negra profunda para dar sensación de altura física */
+    0 15px 30px -5px rgba(0, 0, 0, 0.4),
+    
+    /* Capa 2: Resplandor Lavanda amplio para el efecto visual elegante */
+    0 0 25px -5px rgba(200, 162, 200, 0.35); 
+}
+
+/* Efecto Hover: La tarjeta se eleva y el borde se ilumina con el acento Lavanda */
+/*.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(200, 162, 200, 0.4); /* Lavanda sutil */
+  /*box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); /* Sombra profunda */
+/*}*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitulo {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-secondary); /* Gris Savia */
+  margin-top: 0.5rem;
+}
+
+/* Etiqueta principal (ej: ODOO, WEBAR) */
+.tagPrincipal {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  
+  /* Fondo sólido claro para crear contraste con la tarjeta oscura */
+  background: rgba(244, 241, 234, 0.1); 
+  color: var(--accent); /* Texto Lavanda */
+  border: 1px solid rgba(200, 162, 200, 0.2);
+}
+
+.descripcion {
+  font-size: 0.95rem;
+  line-height: 1.7; /* Mayor interlineado para elegancia */
+  color: var(--text-primary);
+  opacity: 0.9;
+  flex-grow: 1; /* Empuja el footer hacia abajo */
+}
+
+/* Contenedor de etiquetas pequeñas */
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.miniTag {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.2); /* Fondo más oscuro que la tarjeta */
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.footer {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Enlaces como botones minimalistas */
+.link, .linkDemo {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.link {
+  background: transparent;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(200, 162, 200, 0.05);
+}
+
+.linkDemo {
+  background: var(--text-primary);
+  color: var(--bg-main); /* Texto oscuro sobre botón claro */
+  border: 1px solid var(--text-primary);
+}
+
+.linkDemo:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}

@@ -1,0 +1,145 @@
+/**
+ * ESTILOS PARA COMPONENTE: NavBar
+ * PALETA: Slate & Silk (Gris Pizarra, Salvia y Lavanda apagado)
+ * CONCEPTO: Navegación flotante con efecto cristalino y minimalista.
+ */
+
+.header {
+  position: fixed;
+  top: 1.5rem; /* Separación del borde superior para efecto flotante */
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000; /* Asegura que la barra esté siempre por encima del contenido */
+  padding: 0 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 900px; /* Ancho contenido para que la barra no sea infinita */
+}
+
+/* Efecto principal de la barra (Cuerpo) */
+.navCristal {
+  background: rgba(45, 52, 54, 0.7); /* Slate Charcoal con transparencia */
+  backdrop-filter: blur(16px); /* Efecto de desenfoque estilo iOS/MacOS */
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: 100px; /* Bordes totalmente redondeados tipo "píldora" */
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.navInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent); /* Resalte en Lavanda suave al pasar el ratón */
+}
+
+/* Navegación para Escritorio */
+.desktopNav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  color: var(--text-secondary); /* Color Salvia relajante */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+/* Indicador de sección activa: Línea sutil debajo del texto */
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navLink:hover, 
+.linkActivo {
+  color: var(--text-primary);
+}
+
+.linkActivo::after {
+  width: 100%;
+}
+
+/* Navegación Móvil */
+.mobileBtn {
+  display: none; /* Oculto por defecto en escritorio */
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+}
+
+.mobileLink, .mobileLinkActivo {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.mobileLinkActivo {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/**
+ * RESPONSIVE: Adaptación para dispositivos móviles
+ */
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none; /* Oculta el menú horizontal */
+  }
+
+  .mobileBtn {
+    display: block; /* Muestra el botón hamburguesa */
+  }
+
+  .navCristal {
+    border-radius: 25px; /* Menos redondeado cuando el menú está abierto */
+  }
+}

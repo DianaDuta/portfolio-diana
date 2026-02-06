@@ -1,0 +1,45 @@
+/*
+* ==========================================================================
+* ESTILOS PARA: CodeBlock
+* CONCEPTO: Bloque de código con estilo de ventana de terminal.
+* Inspiración: Visual Studio Code, con fondo oscuro, tipografía monoespaciada y colores de sintaxis.
+* Detalles:
+- Barra de título simulada con los 3 puntitos de ventana.
+- Colores de sintaxis para keywords, variables, strings, números y comentarios.
+* ==========================================================================º
+*/
+.wrapper {
+  background: #1e1e1e; /* Fondo estilo editor oscuro (VS Code) */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-family: 'Fira Code', 'Consolas', monospace; /* Tipografía monoespaciada */
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #d4d4d4; /* Color base texto claro */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barra de título simulada (los 3 puntitos de ventana) */
+.header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1rem;
+  opacity: 0.7;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Colores de sintaxis (Syntax Highlighting) */
+.keyword { color: #c586c0; }  /* Rosa/Morado (import, const) */
+.variable { color: #9cdcfe; } /* Azul claro (nombres de variable) */
+.string { color: #ce9178; }   /* Naranja suave (textos entre comillas) */
+.number { color: #b5cea8; }   /* Verde suave (números) */
+.comment { color: #6a9955; font-style: italic; } /* Comentarios */

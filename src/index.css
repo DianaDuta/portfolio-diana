@@ -1,0 +1,96 @@
+/**
+ * ============================================================================
+ * ARCHIVO: index.css
+ * DESCRIPCIÓN: Variables CSS globales (Design Tokens) y estilos base.
+ * ESTÉTICA: "Lavender & Pearl".
+ * ============================================================================
+ */
+
+/**
+  * =============================================================================
+  * 1. DEFINICIÓN DE VARIABLES
+  * =============================================================================
+  */
+:root {
+  /* -- COLORES BASE -- */
+  /* Gris carbón profundo */
+  --bg-main: #2d3436;
+  
+  /* Color "Cristal": usado para fondos semitransparentes */
+  --bg-surface: rgba(168, 182, 177, 0.15);
+  
+  /* -- COLORES DE ACENTO -- */
+  /* Lavanda apagado */
+  --accent: #c8a2c8;
+  
+  /* -- TIPOGRAFÍA -- */
+  /* Blanco hueso: menos agresivo para la vista que el blanco puro (#FFF) */
+  --text-primary: #f4f1ea;
+  /* Gris perla: para textos secundarios y metadatos */
+  --text-secondary: #a8b6b1;
+  
+  /* -- BORDES -- */
+  /* Borde muy sutil para efectos de cristal */
+  --border-light: rgba(244, 241, 234, 0.1);
+}
+
+/** 
+  * ===============================================================================================
+  * 2. RESET BÁSICO
+  * Elimina márgenes y paddings por defecto, y establece box-sizing para un diseño más predecible.
+  * ===============================================================================================
+  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Fundamental: el padding no aumenta el tamaño total */
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes en Mac */
+}
+
+/**
+  *===============================================================================================
+  * 3. PERSONALIZACIÓN DE SCROLLBAR
+  * ===============================================================================================
+  */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-surface); /* Thumb estilo cristal */
+  border-radius: 10px;
+}
+
+/**
+  * ===============================================================================================
+  * 4. ANIMACIONES GLOBALES (Usadas por FadeIn.jsx)
+  * ===============================================================================================
+  */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* Empieza 40px más abajo */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Termina en su posición original */
+  }
+}
+
+.is-visible {
+  /* cubic-bezier: define una curva de aceleración personalizada (suave al final) */
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.fade-wrapper {
+  opacity: 0; /* Oculto inicialmente hasta que JS añada .is-visible */
+}

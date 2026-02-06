@@ -1,0 +1,57 @@
+/**
+ * ESTILOS PARA: Section
+ * CONCEPTO: Espaciado editorial y tipografía jerárquica.
+ */
+
+.wrapper {
+  /* Margen superior para compensar el Navbar fijo */
+  scroll-margin-top: 8rem; 
+  padding: 5rem 0;
+  position: relative;
+}
+
+.header {
+  margin-bottom: 3.5rem; /* Separación generosa antes del contenido */
+  max-width: 800px;
+}
+
+/* El "Antetítulo" o ceja (ej: STACK, TRABAJO) */
+.antetitulo {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em; /* Tracking muy amplio = Lujo */
+  text-transform: uppercase;
+  color: var(--accent); /* Lavanda */
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Línea decorativa junto al antetítulo */
+.antetitulo::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: var(--accent);
+  opacity: 0.5;
+}
+
+.titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem); /* Tipografía fluida */
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.subtitulo {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 60ch; /* Limita el ancho para mejor lectura */
+}

@@ -1,0 +1,35 @@
+/**
+ * ESTILOS PARA: SkillPill
+ * CONCEPTO: Elementos atómicos flotantes.
+ */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Forma de cápsula perfecta */
+  border-radius: 9999px;
+  padding: 0.6rem 1.2rem;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  
+  /* Fondo cristal muy sutil */
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-light);
+  
+  /* Transición rápida para interacción táctil/ratón */
+  transition: all 0.2s ease-in-out;
+  cursor: default; /* Indica que es info, no un botón clicable */
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent); /* Borde se ilumina en Lavanda */
+  transform: scale(1.05); /* Ligero zoom */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
