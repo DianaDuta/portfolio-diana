@@ -1,4 +1,4 @@
-# 👩‍💻 Portfolio Personal — Diana Duta
+# Portfolio Personal — Diana Duta
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -15,7 +15,7 @@ Este repositorio contiene el código fuente de mi portafolio personal. Además d
 
 La aplicación es una SPA (Single Page Application) construida con **React + Vite**, enfocada en el rendimiento, la accesibilidad y una estética cuidada bajo el concepto *"Lavender & Slate"* .
 
-### ✨ Características Principales
+### Características Principales
 
 *** Diseño Glassmorphism:** Implementación manual de efectos de cristal esmerilado (`backdrop-filter`) sin librerías externas de UI.
 *** Rendimiento Óptimo:** Uso de **Vite** para un empaquetado ultrarrápido y carga diferida de assets.

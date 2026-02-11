@@ -82,21 +82,35 @@ export default function App() {
             <div className={styles.bioTexto}>
               <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Características</p>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'Playfair Display' }}>
-                Del pensamiento abstracto a la arquitectura de software
+                Del pensamiento crítico a la arquitectura de software
               </h3>
               <p className={styles.textMuted} style={{ lineHeight: '1.8' }}>
                 {sobreMi.resumen}
               </p>
             </div>
 
+             {/* Referencia a Estudios */}
+
             <div className={styles.bioEstudios}>
-              <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>FORMACIÓN CLAVE</p>
+              <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Formación</p>
               {sobreMi.estudios.map((estudio, i) => (
                 <div key={i} className={styles.estudioItem}>
                   <p className={styles.estudioTitulo}>{estudio.titulo}</p>
                   <p className={styles.estudioMeta}>{estudio.centro}</p>
+                  <p className={styles.estudioFecha}>{estudio.fecha}</p>
+                  <p className={styles.estudioDetalle}>{estudio.detalle}</p>
                 </div>
               ))}
+
+              {/* Sección de Cursos/Certificaciones */}
+              <p className={styles.antetitulo} style={{ marginBottom: '0.5rem' }}>ESPECIALIZACIÓN</p>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {sobreMi.cursos.map((curso, i) => (
+                  <li key={i} className={styles.textMuted} style={{ fontSize: '0.85rem', marginBottom: '0.5rem', borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
+                    {curso}
+                  </li>
+                ))}
+              </ul>
             </div>
           </article>
         </Section>
