@@ -63,8 +63,8 @@ export default function App() {
           titulo="Sobre mí" 
           subtitulo=""
         >
-          {/* Parte A: Grid de Valor */}
-          <div className={styles.valorGrid}>
+          {/* A: Grid de Valor */}
+          <div className={`${styles.valorGrid} ${styles.fullWidth}`}>
             {aporto.map((item, index) => (
               <article key={index} className={`${styles.cristal} ${styles.valorCard}`}>
                 <h3 style={{ fontFamily: 'Playfair Display', fontSize: '1.2rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
@@ -77,7 +77,7 @@ export default function App() {
             ))}
           </div>
 
-          {/* Parte B: Referencia a Estudios */}
+          {/* IZQUIERDA: Sobre mi */}
           <article className={`${styles.cristal} ${styles.bioContainer}`}>
             <div className={styles.bioTexto}>
               <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Características</p>
@@ -88,30 +88,39 @@ export default function App() {
                 {sobreMi.resumen}
               </p>
             </div>
-
-             {/* Referencia a Estudios */}
-
-            <div className={styles.bioEstudios}>
-              <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Formación</p>
-              {sobreMi.estudios.map((estudio, i) => (
-                <div key={i} className={styles.estudioItem}>
-                  <p className={styles.estudioTitulo}>{estudio.titulo}</p>
-                  <p className={styles.estudioMeta}>{estudio.centro}</p>
-                  <p className={styles.estudioFecha}>{estudio.fecha}</p>
-                  <p className={styles.estudioDetalle}>{estudio.detalle}</p>
-                </div>
-              ))}
-
-              {/* Sección de Cursos/Certificaciones */}
-              <p className={styles.antetitulo} style={{ marginBottom: '0.5rem' }}>ESPECIALIZACIÓN</p>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {sobreMi.cursos.map((curso, i) => (
-                  <li key={i} className={styles.textMuted} style={{ fontSize: '0.85rem', marginBottom: '0.5rem', borderLeft: '2px solid var(--accent)', paddingLeft: '10px' }}>
-                    {curso}
+            
+            <div className={styles.bioTexto}>
+              <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Datos de interés</p>
+              <ul className={styles.SkillPillList} style={{ paddingLeft: '1.5rem' }}>
+                {sobreMi.extra.map((dato, i) => (
+                  <li key={i} className={styles.textMuted} style={{ marginBottom: '0.5rem' }}>
+                    {dato}
                   </li>
                 ))}
               </ul>
             </div>
+            </article>
+            {/* DERECHA: Referencia a Estudios */}
+            <article className={`${styles.cristal} ${styles.bioContainer}`}>
+              <div className={styles.bioEstudios}>
+                <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Formación académica</p>
+                {sobreMi.estudios.map((estudio, i) => (
+                  <div key={i} className={styles.estudioItem}>
+                    <p className={styles.estudioTitulo}>{estudio.titulo}</p>
+                    <p className={styles.estudioMeta}>{estudio.centro}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Cursos y Certificados */}
+              <div className={styles.bioEstudios}>
+                <p className={styles.antetitulo} style={{ marginBottom: '1rem' }}>Cursos y Certificados</p>
+                {sobreMi.cursos.map((curso, i) => (
+                  <div key={i} className={styles.estudioItem}>
+                    <p className={styles.estudioTitulo}>{curso}</p>
+                  </div>
+                ))}
+              </div>
           </article>
         </Section>
 
