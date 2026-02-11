@@ -15,6 +15,15 @@ Este repositorio contiene el código fuente de mi portafolio personal. Además d
 
 La aplicación es una SPA (Single Page Application) construida con **React + Vite**, enfocada en el rendimiento, la accesibilidad y una estética cuidada bajo el concepto *"Lavender & Slate"* .
 
+Visita el portfolio:
+https://dianaduta.github.io/portfolio-diana/
+
+O escanea este código QR con la cámara del móvil para acceder al portfolio:
+
+<p align="center">
+  <img src="qr_dianaduta.portfolio.png" width="200" />
+</p>
+
 ### Características Principales
 
 *** Diseño Glassmorphism:** Implementación manual de efectos de cristal esmerilado (`backdrop-filter`) sin librerías externas de UI.
